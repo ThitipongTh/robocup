@@ -1,7 +1,7 @@
 import pymongo
 ##function##
 # blind functions
-def blindInsert(host= '10.26.11.13', collection= '', data= None):
+def blindInsert(host= '172.16.0.254', collection= '', data= None):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup'][collection]
 
@@ -13,7 +13,7 @@ def blindInsert(host= '10.26.11.13', collection= '', data= None):
         client.close()
         return False
     
-def blindInsertList(host= '10.26.11.13', collection= '', data= None):
+def blindInsertList(host= '172.16.0.254', collection= '', data= None):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup'][collection]
 
@@ -25,7 +25,7 @@ def blindInsertList(host= '10.26.11.13', collection= '', data= None):
         client.close()
         return False
 
-def directUpdate(host= '10.26.11.13', collection= '', key= '', data= ''):
+def directUpdate(host= '172.16.0.254', collection= '', key= '', data= ''):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup'][collection]
     
@@ -39,7 +39,7 @@ def directUpdate(host= '10.26.11.13', collection= '', key= '', data= ''):
     
     
 # Map
-def updateMap(host= '10.26.11.13', zone='', oren='', stat='', teamColor= 'MAGENTA'):
+def updateMap(host= '172.16.0.254', zone='', oren='', stat='', teamColor= 'MAGENTA'):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup']['explore_map']
     
@@ -58,7 +58,7 @@ def updateMap(host= '10.26.11.13', zone='', oren='', stat='', teamColor= 'MAGENT
     client.close()
     return res
 
-def resetMap(host= '10.26.11.13'):
+def resetMap(host= '172.16.0.254'):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup']['explore_map']
     
@@ -109,7 +109,7 @@ def resetMap(host= '10.26.11.13'):
 
 
 # Station
-def updateStation(host= '10.26.11.13', name= '', position= []):
+def updateStation(host= '172.16.0.254', name= '', position= []):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup']['station_info']
     
@@ -130,7 +130,7 @@ def updateStation(host= '10.26.11.13', name= '', position= []):
     return res
 
 
-def resetStation(host= '10.26.11.13'):
+def resetStation(host= '172.16.0.254'):
     client = pymongo.MongoClient(f'mongodb://{host}:27017/')
     collection = client['robocup']['station_info']
     

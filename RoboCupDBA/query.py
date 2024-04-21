@@ -2,7 +2,7 @@ import pymongo
 import json
 from bson.json_util import dumps
 ##function##
-def query(host= '10.26.11.13', db="robocup", collection="", data={}):
+def query(host= '172.16.0.254', db="robocup", collection="", data={}):
     link= f"mongodb://{host}:27017/"
     try:
         client = pymongo.MongoClient(link)
@@ -17,7 +17,7 @@ def query(host= '10.26.11.13', db="robocup", collection="", data={}):
     except:
         return False
 
-def getAll(host= '10.26.11.13', db="robocup", collection=""):
+def getAll(host= '172.16.0.254', db="robocup", collection=""):
     try:
         client = pymongo.MongoClient(f'mongodb://{host}:27017/')
         # Access a specific database
